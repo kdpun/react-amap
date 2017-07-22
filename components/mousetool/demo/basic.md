@@ -4,12 +4,12 @@ order: 0
 ---
 
 
-```jsx 
+```jsx
 import { Map, MouseTool } from 'react-amap';
 
 class App extends React.Component{
   constructor(){
-    super(); 
+    super();
     this.toolEvents = {
       created: (tool) => {
         this.tool = tool;
@@ -18,35 +18,35 @@ class App extends React.Component{
     this.mapPlugins = ['ToolBar'];
     this.mapCenter = {longitude: 120, latitude: 35};
   }
-  
+
   drawCircle(){
     if(this.tool){
       this.tool.circle();
     }
   }
-  
+
   drawRectangle(){
     if(this.tool){
       this.tool.rectangle();
     }
   }
-  
+
   drawMarker(){
     if (this.tool){
       this.tool.marker();
     }
   }
-  
+
   close(){
     if (this.tool){
       this.tool.close();
     }
   }
-  
+
   render(){
     return <div>
       <div style={{width: '100%', height: 370}}>
-        <Map 
+        <Map
           plugins={this.mapPlugins}
           center={this.mapCenter}
         >
